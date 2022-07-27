@@ -1,7 +1,7 @@
 <?php
 require_once "db_connect.php";
 
-$id = $_GET["animal_id"];
+$animal_id = $_GET["animal_id"];
 $sql = "select * animal where animal_id = $animal_id";
 $result = mysqli_query($conn, $sql);
 
