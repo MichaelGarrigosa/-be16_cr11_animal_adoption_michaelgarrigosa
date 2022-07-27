@@ -6,24 +6,25 @@ if (isset($_POST["submit"])) {
     //$last_name = $_POST["last_name"];
     //$email = $_POST["email"];
 
-    $id = $_POST["id"];
-    $title = $_POST["title"];
-    $image = $_POST["image"];
-    $isbn = $_POST["isbn"];
-    $short_description = $_POST["short_description"];
-    $type = $_POST["type"];
-    $author_first_name = $_POST["author_first_name"];
-    $author_last_name = $_POST["author_last_name"];
-    $publisher_name = $_POST["publisher_name"];
-    $publisher_Adress = $_POST["publisher_address"];
-    $publish_date = $_POST["publish_date"];
-    $status = $_POST["status"];
+    $animal_id = $_POST["animal_id"];
+    $name = $_POST["name"];
+    $age = $_POST["age"];
+    $kind = $_POST["kind"];
+    $description = $_POST["description"];
+    $size = $_POST["size"];
+    $vaccinated = $_POST["vaccinated"];
+    $breed = $_POST["breed"];
+    $adopted = $_POST["adopted"];
+    $available = $_POST["available"];
+    $picture = $_POST["picture"];
 
-    $sql = "INSERT INTO `id`(`title`,`image`,`isbn`, `short_description`, `type`,`author_first_name`, `author_last_name`, `publisher_name`, `publisher_adress`, `publish_date`, `status`,) VALUES (`$title`, `$image`, `$isbn`, `$short_description`, `$type`,`$author_first_name`, `$author_last_name`, `$publisher_name`,`$publisher_address`, `$publish_date`, `$status`)";
+
+    $sql = "INSERT INTO `animal_id`(`name`,`age`,`kind`, `description`, `size`,`vaccinated`, `breed`, `adopted`, `available`, `picture`) VALUES (`$name`, `$age`, `$kind`, `$description`, `$size`,`$vaccinated`, `$breed`, `$adopted`,`$available`)";
     $result = mysqli_query($conn, $sql);
 
+
     if ($result) {
-        echo "book_library has been created";
+        echo "animal has been created";
     } else {
         echo "Error";
     }
