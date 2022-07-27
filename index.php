@@ -26,6 +26,7 @@ if (mysqli_num_rows($result) == 0) {
   <p class='card-text'>{$row["adopted"]}</p>;
   <p class='card-text'>{$row["available"]}</p>;
   <p class='card-text'>{$row["picture"]}</p>;
+    
   
  <a href='details.php?id={$row["animal_id"]}' class='btn btn-primary'>Details</a>
     <a href='update.php?id={$row["animal_id"]}' class='btn btn-warning'>Update</a>
@@ -34,6 +35,7 @@ if (mysqli_num_rows($result) == 0) {
 </div>";
     }
 }
+// <img src='BE16_cr11_animal_adoption_michaelgarrigosa/-be16_cr11_animal_adoption_michaelgarrigosa/image/{$row['picture']}' alt='...'>
 
 mysqli_close($conn);
 ?>
