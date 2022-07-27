@@ -1,7 +1,7 @@
 <?php
 require_once "db_connect.php";
 
-$animal = $_GET["id"];
+$animal_id = $_GET["id"];
 $sql = "SELECT * FROM animal WHERE animal_id = $animal_id";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
     $sql = "UPDATE `animal`, SET `animal_id`='[$animal_id]',`name`='[$name]',`age`='[$age]',`kind`='[$kind]',`description`='[$description]',`size`='[$size]',`vaccinated`='[$vaccinated]',`breed`= '[$breed]',`adopted`='[$adopted]',`available`='[available]',`picture`='[$picture]' 
     
 
-    WHERE 1, WHERE animal_id = $animal";
+     WHERE animal_id = $animal_id";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo "animal has been updated";
