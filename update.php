@@ -1,32 +1,34 @@
 <?php
 require_once "db_connect.php";
 
-$book_library = $_GET["id"];
-$sql = "SELECT * FROM book_library WHERE id = $book_library";
+$animal = $_GET["animakl_id"];
+$sql = "SELECT * FROM animal WHERE animal_id = $animal_id";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
 //$sql = "INSERT INTO `book_libary`(`author_first_name`, `author_last_name`, `id`, `image`, `isbn`, `publisher_Adress`, `publisher_name`, `publish_date`, `short_description`,`status`, `title`, `type`,)
 if (isset($_POST["submit"])) {
 
-    $title = $_POST["title"];
-    $image = $_POST["image"];
-    $isbn = $_POST["isbn"];
-    $short_description = $_POST["short_description"];
-    $type = $_POST["type"];
-    $author_first_name = $_POST["author_first_name"];
-    $author_last_name = $_POST["author_last_name"];
-    $publisher_name = $_POST["publisher_name"];
-    $publisher_address = $_POST["publisher_address"];
-    $publish_date = $_POST["publish_date"];
-    $status = $_POST["status"];
+    $animal_id = $_POST["animal_id"];
+    $name = $_POST["name"];
+    $age = $_POST["age"];
+    $kind = $_POST["kind"];
+    $description = $_POST["description"];
+    $size = $_POST["size"];
+    $vaccinated = $_POST["vaccinated"];
+    $breed = $_POST["breed"];
+    $adopted = $_POST["adopted"];
+    $available = $_POST["available"];
+    $picture = $_POST["picture"];
 
-    $sql = "UPDATE `book_library`, SET `title`='[$title]',`image`='[$image]',`isbn`='[$isbn]',`short_description`='[$short_description]',`type`='[$type]',`author_first_name`='[$author_first_name]',`author_last_name`='[$author_last_name]',`publisher_name`= '[$publisher_name]',`publisher_address`='[$publisher_address]',`publish_date`='[publish_date]',`status`='[$status]' 
+
+    $sql = "UPDATE `animal`, SET `animal_id`='[$animal_id]',`name`='[$name]',`age`='[$age]',`kind`='[$kind]',`description`='[$description]',`size`='[$size]',`vaccinated`='[$vaccinated]',`breed`= '[$breed]',`adopted`='[$adopted]',`available`='[available]',`picture`='[$picture]' 
     
-    WHERE 1, WHERE id = $book_library";
+
+    WHERE 1, WHERE animal_id = $animal";
     $result = mysqli_query($conn, $sql);
     if ($result) {
-        echo "book_library has been updated";
+        echo "animal has been updated";
         header("refresh:3;url= index.php");
     } else {
         echo "Error";
@@ -47,21 +49,22 @@ if (isset($_POST["submit"])) {
 <body>
     <form method="POST">
 
-        <input type="text" name="id" value="<?php echo $row["id"] ?>">
-        <input type="text" name="title" value="<?php echo $row["title"] ?>">
-        <input type="image" name="image" value="<?php echo $row["image"] ?>">
-        <input type="number" name="isbn" value="<?php echo $row["isbn"] ?>">
-        <input type="text" name="short_description" value="<?php echo $row["short_description"] ?>">
-        <input type="text" name="type" value="<?php echo $row["type"] ?>">
-        <input type="text" name="author_first_name" value="<?php echo $row["author_first_name"] ?>">
-        <input type="text" name="author_last_name" value="<?php echo $row["author_last_name"] ?>">
-        <input type="text" name="publisher_name" value="<?php echo $row["publisher_name"] ?>">
-        <input type="text" name="publisher_address" value="<?php echo $row["publisher_address"] ?>">
-        <input type="text" name="publish_date" value="<?php echo $row["publish_date"] ?>">
-        <input type="text" name="status" value="<?php echo $row["status"] ?>">
+        <input type="text" name="animal_id" value="<?php echo $row["animal_id"] ?>">
+        <input type="text" name="name" value="<?php echo $row["name"] ?>">
+
+        <input type="number" name="age" value="<?php echo $row["age"] ?>">
+        <input type="text" name="kind" value="<?php echo $row["kind"] ?>">
+        <input type="text" name="description" value="<?php echo $row["description"] ?>">
+        <input type="number" name="size" value="<?php echo $row["size"] ?>">
+        <input type="text" name="vaccinated" value="<?php echo $row["vaccinated"] ?>">
+        <input type="text" name="breed" value="<?php echo $row["breed"] ?>">
+        <input type="text" name="adopted" value="<?php echo $row["adopted"] ?>">
+        <input type="text" name="available" value="<?php echo $row["available"] ?>">
+        <input type="picture" name="picture" value="<?php echo $row["picture"] ?>">
         <input type="submit" name="submit" value="Update">
 
     </form>
+
 </body>
 
 </html>
