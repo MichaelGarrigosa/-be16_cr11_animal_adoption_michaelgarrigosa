@@ -1,8 +1,8 @@
 <?php
 require_once "db_connect.php";
 
-$id = $_GET["id"];
-$sql = "select * from book_library where id = $id";
+$id = $_GET["animal_id"];
+$sql = "select * animal where animal_id = $animal_id";
 $result = mysqli_query($conn, $sql);
 
 $row = mysqli_fetch_assoc($result);

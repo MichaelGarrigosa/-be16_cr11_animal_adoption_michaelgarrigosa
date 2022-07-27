@@ -4,7 +4,7 @@ require_once "db_connect.php";
 if (isset($_GET["status"])) {
     $status = $_GET["status"];
 
-    $sql = "SELECT * FROM book_library WHERE status = '$status'";
+    $sql = "SELECT * FROM animal WHERE status = '$status'";
     $result = mysqli_query($conn, $sql);
     $body = "";
     if (mysqli_num_rows($result) == 0) {
@@ -13,26 +13,31 @@ if (isset($_GET["status"])) {
         while ($row = mysqli_fetch_assoc($result)) {
             $body .= "<div class='card' style='width: 18rem;'>
                 <div class='card-body'>
-                <h5 class='card-title'> {$row["title"]} {$row["author_first_name"]} </h5>
-                <p class='card-text'>{$row["author_last_name"]}</p>
-                <p class='card-text'>{$row["isbn"]}</p>
-                <p class='card-text'>{$row["image"]}</p>;
-                <p class='card-text'>{$row["short_description"]}</p>;
-                <p class='card-text'>{$row["type"]}</p>;
-                <p class='card-text'>{$row["publisher_name"]}</p>;
-                <p class='card-text'>{$row["publisher_address"]}</p>;
-                <p class='card-text'>{$row["publish_date"]}</p>;
-                <p class='card-text'>{$row["status"]}</p>;                    
-                <a href='details.php?id={$row["id"]}' class='btn btn-primary'>Details</a>
-                <a href='update.php?id={$row["id"]}' class='btn btn-warning'>Update</a>
-                <a href='delete.php?id={$row["id"]}' class='btn btn-danger'>Delete</a>
+                <h5 class='card-title'> {$row["animal_id"]} {$row["name"]} {$row["age"]} {$row["kind"]} {$row["description"]}</h5>
+                
+                <p class='card-text'>{$row["animal_id"]}</p>;  
+                <p class='card-text'>{$row["name"]}</p>;
+                <p class='card-text'>{$row["age"]}</p>;
+                <p class='card-text'>{$row["kind"]}</p>;
+                <p class='card-text'>{$row["description"]}</p>;
+                <p class='card-text'>{$row["size"]}</p>;
+                <p class='card-text'>{$row["vaccinated"]}</p>;
+                <p class='card-text'>{$row["breed"]}</p>;
+                <p class='card-text'>{$row["adopted"]}</p>;
+                <p class='card-text'>{$row["available"]}</p>;
+                <p class='card-text'>{$row["picture"]}</p>;
+               
+        
+                <a href='details.php?animal_id={$row["animal_id"]}' class='btn btn-primary'>Details</a>
+                <a href='update.php?animal_id={$row["animal_id"]}' class='btn btn-warning'>Update</a>
+                <a href='delete.php?animal_id={$row["animal_id"]}' class='btn btn-danger'>Delete</a>
                 </div>
             </div>";
         }
     }
 } else {
 
-    $sql = "SELECT * FROM book_library";
+    $sql = "SELECT * FROM animal";
     $result = mysqli_query($conn, $sql);
     $body = "";
     if (mysqli_num_rows($result) == 0) {
@@ -41,19 +46,23 @@ if (isset($_GET["status"])) {
         while ($row = mysqli_fetch_assoc($result)) {
             $body .= "<div class='card' style='width: 18rem;'>
             <div class='card-body'>
-            <h5 class='card-title'> {$row["title"]} {$row["author_first_name"]} </h5>
-                    <p class='card-text'>{$row["author_last_name"]}</p>
-                    <p class='card-text'>{$row["isbn"]}</p>
-                    <p class='card-text'>{$row["image"]}</p>;
-                    <p class='card-text'>{$row["short_description"]}</p>;
-                    <p class='card-text'>{$row["type"]}</p>;
-                    <p class='card-text'>{$row["publisher_name"]}</p>;
-                    <p class='card-text'>{$row["publisher_address"]}</p>;
-                    <p class='card-text'>{$row["publish_date"]}</p>;
-                    <p class='card-text'>{$row["status"]}</p>;                    
-                    <a href='details.php?id={$row["id"]}' class='btn btn-primary'>Details</a>
-                    <a href='update.php?id={$row["id"]}' class='btn btn-warning'>Update</a>
-                    <a href='delete.php?id={$row["id"]}' class='btn btn-danger'>Delete</a>
+            <h5 class='card-title'> {$row["animal_id"]} {$row["name"]} {$row["age"]} {$row["kind"]} {$row["description"]}</h5>
+            
+            <p class='card-text'>{$row["animal_id"]}</p>;  
+            <p class='card-text'>{$row["name"]}</p>;
+            <p class='card-text'>{$row["age"]}</p>;
+            <p class='card-text'>{$row["kind"]}</p>;
+            <p class='card-text'>{$row["description"]}</p>;
+            <p class='card-text'>{$row["size"]}</p>;
+            <p class='card-text'>{$row["vaccinated"]}</p>;
+            <p class='card-text'>{$row["breed"]}</p>;
+            <p class='card-text'>{$row["adopted"]}</p>;
+            <p class='card-text'>{$row["available"]}</p>;
+            <p class='card-text'>{$row["picture"]}</p>;
+
+                    <a href='details.php?animal_id={$row["animal_id"]}' class='btn btn-primary'>Details</a>
+                    <a href='update.php?animal_id={$row["animal_id"]}' class='btn btn-warning'>Update</a>
+                    <a href='delete.php?animal_id={$row["animal_id"]}' class='btn btn-danger'>Delete</a>
                 
                 
                     </div>

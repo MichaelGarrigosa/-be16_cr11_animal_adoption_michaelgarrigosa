@@ -1,9 +1,9 @@
 <?php
 require_once "db_connect.php";
-$id = $_GET["id"];
+$animal_id = $_GET["animal_id"];
 
 if (isset($_POST["submit"])) {
-    $sql = "DELETE FROM book_library WHERE id = $id";
+    $sql = "DELETE FROM animal WHERE animal_id = $animal_id";
 
     $result = mysqli_query($conn, $sql);
 
