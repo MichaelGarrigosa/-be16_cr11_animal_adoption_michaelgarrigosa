@@ -6,7 +6,7 @@ $sql = "SELECT * FROM `id`;";
 $result = mysqli_query($conn, $sql);
 $body = "";
 //$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);mysqli_fetch_assoc()
-if (mysqli_num_rows($result) == 0) {
+if (mysqli_fetch_all_rows($result) == 0) {
     $body = "No results";
 } else {
     while ($row = mysqli_fetch_assoc($result)) {
