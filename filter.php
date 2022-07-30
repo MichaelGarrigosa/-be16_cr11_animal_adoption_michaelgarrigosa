@@ -4,7 +4,7 @@ require_once "db_connect.php";
 if (isset($_GET["status"])) {
     $status = $_GET["status"];
 
-    $sql = "SELECT * FROM id WHERE status = '$available'";
+    $sql = "SELECT * FROM 'id' WHERE status = '$available'";
     $result = mysqli_query($conn, $sql);
     $body = "";
     if (mysqli_num_rows($result) == 0) {
