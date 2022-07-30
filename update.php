@@ -1,7 +1,7 @@
 <?php
 require_once "db_connect.php";
 
-$animal = $_GET["animal_id"];
+$id = $_GET["animal_id"];
 $sql = "SELECT * FROM animal WHERE animal_id = $animal_id";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
@@ -9,7 +9,7 @@ $row = mysqli_fetch_assoc($result);
 //$sql = "INSERT INTO `book_libary`(`author_first_name`, `author_last_name`, `id`, `image`, `isbn`, `publisher_Adress`, `publisher_name`, `publish_date`, `short_description`,`status`, `title`, `type`,)
 if (isset($_POST["submit"])) {
 
-    $animal_id = $_POST["animal_id"];
+    $id = $_POST["animal_id"];
     $name = $_POST["name"];
     $age = $_POST["age"];
     $kind = $_POST["kind"];
@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
     $picture = $_POST["picture"];
 
 
-    $sql = "UPDATE `animal`, SET `animal_id`='[$animal_id]',`name`='[$name]',`age`='[$age]',`kind`='[$kind]',`description`='[$description]',`size`='[$size]',`vaccinated`='[$vaccinated]',`breed`= '[$breed]',`adopted`='[$adopted]',`available`='[available]',`picture`='[$picture]' 
+    $sql = "UPDATE `animal`, SET `id`='[$id]',`name`='[$name]',`age`='[$age]',`kind`='[$kind]',`description`='[$description]',`size`='[$size]',`vaccinated`='[$vaccinated]',`breed`= '[$breed]',`adopted`='[$adopted]',`available`='[available]',`picture`='[$picture]' 
     
 
      WHERE animal_id = $animal_id";
