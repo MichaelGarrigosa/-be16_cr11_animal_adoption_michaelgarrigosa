@@ -1,15 +1,15 @@
 <?php
 require_once "db_connect.php";
 
-$id = $_GET["id"];
-$sql = "SELECT * FROM id WHERE id = $id";
+$animal = $_GET["animal"];
+$sql = "SELECT * FROM animal WHERE animal = $animal";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
 //$sql = "INSERT INTO `book_libary`(`author_first_name`, `author_last_name`, `id`, `image`, `isbn`, `publisher_Adress`, `publisher_name`, `publish_date`, `short_description`,`status`, `title`, `type`,)
 if (isset($_POST["submit"])) {
 
-    $id = $_POST["id"];
+    $id = $_POST["animal"];
     $name = $_POST["name"];
     $age = $_POST["age"];
     $kind = $_POST["kind"];
@@ -22,10 +22,10 @@ if (isset($_POST["submit"])) {
     $picture = $_POST["picture"];
 
 
-    $sql = "UPDATE `animal`, SET `id`='[$id]',`name`='[$name]',`age`='[$age]',`kind`='[$kind]',`description`='[$description]',`size`='[$size]',`vaccinated`='[$vaccinated]',`breed`= '[$breed]',`adopted`='[$adopted]',`available`='[available]',`picture`='[$picture]' 
+    $sql = "UPDATE `animal`, SET `animal_id`='[$id]',`name`='[$name]',`age`='[$age]',`kind`='[$kind]',`description`='[$description]',`size`='[$size]',`vaccinated`='[$vaccinated]',`breed`= '[$breed]',`adopted`='[$adopted]',`available`='[available]',`picture`='[$picture]' 
     
 
-     WHERE id = $id";
+     WHERE animal = $animal_id";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo "animal has been updated";
@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
 <body>
     <form method="POST">
 
-        <input type="text" name="id" value="<?php echo $row["id"] ?>">
+        <input type="text" name="animal_id" value="<?php echo $row["animal_id"] ?>">
         <input type="text" name="name" value="<?php echo $row["name"] ?>">
 
         <input type="number" name="age" value="<?php echo $row["age"] ?>">

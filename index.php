@@ -28,9 +28,9 @@ if (mysqli_num_rows($result) == 0) {
   <p class='card-text'>{$row["picture"]}</p>;
     
   
- <a href='details.php?id={$row["animal_id"]}' class='btn btn-primary'>Details</a>
-    <a href='update.php?id={$row["animal_id"]}' class='btn btn-warning'>Update</a>
-    <a href='delete.php?id={$row["animal_id"]}' class='btn btn-danger'>Delete</a>
+  <a href='details.php?animal={$row["animal"]}' class='btn btn-primary'>Details</a>
+  <a href='update.php?animal={$row["animal"]}' class='btn btn-warning'>Update</a>
+  <a href='delete.php?animal={$row["animal"]}' class='btn btn-danger'>Delete</a>
   </div>
 </div>";
     }
