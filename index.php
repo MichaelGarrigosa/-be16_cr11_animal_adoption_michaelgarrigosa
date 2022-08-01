@@ -15,8 +15,7 @@ if (mysqli_num_rows($result) == 0) {
   <h5 class='card-title'> {$row["name"]} {$row["age"]} {$row["kind"]} {$row["description"]}</h5>
   {$row["size"]} {$row["vaccinated"]} {$row["breed"]} {$row["adopted"]}  {$row["available"]} {$row["picture"]}
 
-  
- 
+
   <p class='card-text'>{$row["name"]}</p>;
   <p class='card-text'>{$row["age"]}</p>;
   <p class='card-text'>{$row["kind"]}</p>;
