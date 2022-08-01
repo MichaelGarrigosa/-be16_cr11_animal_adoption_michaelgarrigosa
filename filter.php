@@ -13,9 +13,8 @@ if (isset($_GET["status"])) {
         while ($row = mysqli_fetch_assoc($result)) {
             $body .= "<div class='card' style='width: 18rem;'>
                 <div class='card-body'>
-                <h5 class='card-title'> {$row["id"]} {$row["name"]} {$row["age"]} {$row["kind"]} {$row["description"]}</h5>
+                <h5 class='card-title'> {$row["name"]} {$row["age"]} {$row["kind"]} {$row["description"]}</h5>
                 
-                <p class='card-text'>{$row["animal"]}</p>;  
                 <p class='card-text'>{$row["name"]}</p>;
                 <p class='card-text'>{$row["age"]}</p>;
                 <p class='card-text'>{$row["kind"]}</p>;
@@ -37,7 +36,7 @@ if (isset($_GET["status"])) {
     }
 } else {
 
-    $sql = "SELECT * FROM id";
+    $sql = "SELECT * FROM animal_id";
     $result = mysqli_query($conn, $sql);
     $body = "";
     if (mysqli_num_rows($result) == 0) {
