@@ -1,8 +1,8 @@
 <?php
 require_once "db_connect.php";
 
-$id = $_GET["id"];
-$sql = "SELECT * FROM id WHERE id = $id";
+$animal = $_GET["animal"];
+$sql = "SELECT * FROM animal WHERE animal = $animal";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -28,8 +28,8 @@ $row = mysqli_fetch_assoc($result);
             <p class='card-text'>
                 <?= $row["size"] . " | " . $row["vaccinated"] . " | " . $row["breed"] . " | " . $row["adopted"] . " | " . $row["available"] . " | " . $row["picture"]; ?>
             </p>
-            <a href='update.php?id=<?= $row["id"] ?>' class='btn btn-warning'>Update</a>
-            <a href='delete.php?id=<?= $row["id"] ?>' class='btn btn-danger'>Delete</a>
+            <a href='update.php?animal=<?= $row["animal"] ?>' class='btn btn-warning'>Update</a>
+            <a href='delete.php?animal=<?= $row["animal"] ?>' class='btn btn-danger'>Delete</a>
 
 
         </div>
