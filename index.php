@@ -2,7 +2,7 @@
 <?php
 require_once "db_connect.php";
 
-$sql = "SELECT * FROM `id`;";
+$sql = "SELECT * FROM `animal`;";
 $result = mysqli_query($conn, $sql);
 $body = "";
 //$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);mysqli_fetch_assoc()
