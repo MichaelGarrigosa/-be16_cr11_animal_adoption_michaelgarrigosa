@@ -23,7 +23,7 @@ $row = mysqli_fetch_assoc($result);
 <body>
     <div class='card' style='width: 18rem;'>
         <div class='card-body'>
-            <h5 class='card-title'> {$row["animal_id"]} {$row["name"]} {$row["age"]} {$row["kind"]}
+            <h5 class='card-title'> {$row["name"]} {$row["age"]} {$row["kind"]}
                 {$row["description"]}</h5>
             <p class='card-text'>
                 <?= $row["size"] . " | " . $row["vaccinated"] . " | " . $row["breed"] . " | " . $row["adopted"] . " | " . $row["available"] . " | " . $row["picture"]; ?>
