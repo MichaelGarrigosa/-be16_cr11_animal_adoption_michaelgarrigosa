@@ -6,7 +6,6 @@ if (isset($_POST["submit"])) {
     //$last_name = $_POST["last_name"];
     //$email = $_POST["email"];
 
-    $animal = $_POST["animal"];
     $name = $_POST["name"];
     $age = $_POST["age"];
     $kind = $_POST["kind"];
