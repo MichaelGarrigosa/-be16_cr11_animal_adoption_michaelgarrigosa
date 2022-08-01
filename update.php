@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
     $picture = $_POST["picture"];
 
 
-    $sql = "UPDATE `animal`, SET `animal_id`='[$id]',`name`='[$name]',`age`='[$age]',`kind`='[$kind]',`description`='[$description]',`size`='[$size]',`vaccinated`='[$vaccinated]',`breed`= '[$breed]',`adopted`='[$adopted]',`available`='[available]',`picture`='[$picture]' 
+    $sql = "UPDATE `animal`, SET `animal_id`='[$animal_id]',`name`='[$name]',`age`='[$age]',`kind`='[$kind]',`description`='[$description]',`size`='[$size]',`vaccinated`='[$vaccinated]',`breed`= '[$breed]',`adopted`='[$adopted]',`available`='[available]',`picture`='[$picture]' 
     
 
      WHERE animal_id = $animal_id";
