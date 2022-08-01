@@ -6,7 +6,7 @@ if (isset($_POST["submit"])) {
     //$last_name = $_POST["last_name"];
     //$email = $_POST["email"];
 
-    $id = $_POST["id"];
+    $animal = $_POST["animal"];
     $name = $_POST["name"];
     $age = $_POST["age"];
     $kind = $_POST["kind"];
@@ -19,7 +19,7 @@ if (isset($_POST["submit"])) {
     $picture = $_POST["picture"];
 
 
-    $sql = "INSERT INTO `id`(`name`,`age`,`kind`, `description`, `size`,`vaccinated`, `breed`, `adopted`, `available`, `picture`) VALUES (`$name`, `$age`, `$kind`, `$description`, `$size`,`$vaccinated`, `$breed`, `$adopted`,`$available`)";
+    $sql = "INSERT INTO `animal`(`name`,`age`,`kind`, `description`, `size`,`vaccinated`, `breed`, `adopted`, `available`, `picture`) VALUES (`$name`, `$age`, `$kind`, `$description`, `$size`,`$vaccinated`, `$breed`, `$adopted`,`$available`)";
     $result = mysqli_query($conn, $sql);
 
 
