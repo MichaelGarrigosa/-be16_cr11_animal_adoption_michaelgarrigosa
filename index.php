@@ -10,12 +10,12 @@ if (mysqli_num_rows($result) == 0) {
     $body = "No results";
 } else {
     while ($row = mysqli_fetch_assoc($result)) {
-        $picture = "image/" . $row['picture'];
-        var_dump($picture);
+        // $picture = "image/" . $row['picture'];
+        // var_dump($picture);
         $body .= "<div class='card' style='width: 18rem;'>
   <div class='card-body'>
   <h5 class='card-title'> {$row["name"]} {$row["age"]} {$row["kind"]} {$row["description"]}</h5>
-  {$row["size"]} {$row["vaccinated"]} {$row["breed"]} {$row["adopted"]}  {$row["available"]} $picture
+  {$row["size"]} {$row["vaccinated"]} {$row["breed"]} {$row["adopted"]}  {$row["available"]}
 
 
   <p class='card-text'>{$row["name"]}</p>;
@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) == 0) {
   <p class='card-text'>{$row["breed"]}</p>;
   <p class='card-text'>{$row["adopted"]}</p>;
   <p class='card-text'>{$row["available"]}</p>;
-  <p class='card-text'>{$picture}</p>;
+  <p class='card-text'><img src='image/{$row["picture"]}' width='100%'></p>;
     
   
   <a href='details.php?animal_id={$row["animal_id"]}' class='btn btn-primary'>Details</a>
