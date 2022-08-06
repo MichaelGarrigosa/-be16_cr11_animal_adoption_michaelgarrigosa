@@ -4,7 +4,7 @@ require_once "db_connect.php";
 if (isset($_GET["status"])) {
     $status = $_GET["status"];
 
-    $sql = "SELECT * FROM 'user' WHERE status = '$available'";
+    $sql = "SELECT * FROM 'animal' WHERE status = '$available'";
     $result = mysqli_query($conn, $sql);
     $body = "";
     if (mysqli_num_rows($result) == 0) {
@@ -36,7 +36,7 @@ if (isset($_GET["status"])) {
     }
 } else {
 
-    $sql = "SELECT * FROM animal_id";
+    $sql = "SELECT * FROM animal";
     $result = mysqli_query($conn, $sql);
     $body = "";
     if (mysqli_num_rows($result) == 0) {
