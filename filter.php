@@ -10,7 +10,7 @@ if (isset($_GET["status"])) {
     if (mysqli_num_rows($result) == 0) {
         $body = "No results";
     } else {
-        while ($row = mysqli_fetch_assoc($result)) {
+        while ($row = mysqli_fetch_assoc($adopted)) {
             $body .= "<div class='card' style='width: 18rem;'>
                 <div class='card-body'>
                 <h5 class='card-title'> {$row["name"]} {$row["age"]} {$row["kind"]} {$row["description"]}</h5>
