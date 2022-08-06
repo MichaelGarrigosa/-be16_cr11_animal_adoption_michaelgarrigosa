@@ -1,6 +1,6 @@
 <?php
 require_once "db_connect.php";
-$animal = $_GET["animal_id"];
+$animal = $_GET["animal"];
 
 if (isset($_POST["submit"])) {
     $sql = "DELETE FROM animal WHERE animal_id = $animal";
