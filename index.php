@@ -3,7 +3,7 @@
 require_once "db_connect.php";
 
 $sql = "SELECT * FROM `animal`";
-$result = mysqli_query($conn, $sql);
+$adopted = mysqli_query($conn, $sql);
 $body = "";
 //$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);mysqli_fetch_assoc()
 if (mysqli_num_rows($adopted) == 0) {
